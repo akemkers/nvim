@@ -18,4 +18,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Buffer navigation
 vim.api.nvim_set_keymap('n', 'L', ':bnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'H', ':bprevious<CR>', { noremap = true, silent = true })
--- vim: ts=2 sts=2 sw=2 et
+
+-- Tabs
+vim.keymap.set('n', '<leader>tc', ':tabnew<cr>', { silent = true, desc = 'Creates new tab' })
+vim.keymap.set('n', '<leader>tq', ':tabclose<cr>', { silent = true, desc = 'Quit current tab' })
+vim.keymap.set('n', '<leader>tn', ':tabnext<cr>', { silent = true, desc = 'Next tab' })

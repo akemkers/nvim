@@ -34,7 +34,6 @@ require('lazy').setup {
     require 'plugins.sleuth',
     require 'plugins.lazygit',
     require 'plugins.alpha',
-    require 'plugins.diffview',
     require 'plugins.neogit',
   },
 }
