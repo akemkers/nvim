@@ -6,13 +6,25 @@ return {
   },
   keys = {
     { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Open Neogit' },
-    { '<leader>gd', '<cmd>DiffviewOpen<cr>', desc = 'Open Diffview' },
+    {
+      '<leader>gd',
+      function()
+        if next(require('diffview.lib').views) == nil then
+          vim.cmd 'DiffviewOpen'
+        else
+          vim.cmd 'DiffviewClose'
+        end
+      end,
+      desc = 'Open Diffview',
+    },
     { '<leader>gD', '<cmd>DiffviewOpen main<cr>', desc = 'Open Diffview (main)' },
   },
-  opts = {
-    auto_refresh = true,
-    integrations = {
-      diffview = true,
-    },
-  },
+  config = function()
+    require('neogit').setup {
+      auto_refresh = true,
+      integrations = {
+        diffview = true,
+      },
+    }
+  end,
 }
