@@ -7,9 +7,15 @@ return {
       require('catppuccin').setup {
         flavour = 'mocha',
         integrations = {
+          alpha = true,
+          diffview = true,
           cmp = true,
+          gitsigns = true,
+
           mason = true,
           mini = { enabled = true },
+          neotree = true,
+          neogit = true,
         },
         highlight_overrides = {
           mocha = function(colors)
