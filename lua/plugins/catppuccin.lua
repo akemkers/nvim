@@ -20,6 +20,7 @@ return {
         highlight_overrides = {
           mocha = function(colors)
             local overrides = {
+              -- Tabline overrides
               MiniTablineCurrent = { fg = colors.yellow, bg = colors.base, style = { 'bold' } },
               MiniTablineFill = { bg = colors.mantle },
               MiniTablineHidden = { fg = colors.overlay1, bg = colors.surface0 },
@@ -28,6 +29,13 @@ return {
               MiniTablineModifiedVisible = { fg = colors.base, bg = colors.subtext0, style = { 'bold' } },
               MiniTablineTabpagesection = { fg = colors.base, bg = colors.mauve, style = { 'bold' } },
               MiniTablineVisible = { fg = colors.overlay1, bg = colors.surface0, style = { 'bold' } },
+
+              -- Typescript overrides
+              ['@keyword.export'] = { fg = colors.mauve },
+              ['@tag'] = { fg = colors.blue },
+              ['@tag.builtin'] = { fg = colors.blue },
+              ['@tag.attribute'] = { fg = colors.yellow },
+              ['@tag.attribute.tsx'] = { fg = colors.yellow },
             }
 
             for _, hl in ipairs { 'Headline', 'rainbow' } do
