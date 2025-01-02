@@ -1,4 +1,7 @@
 - Fjerne notification popup for hver gang man gjøre en undo/redo. 
-- Fikse promten som dukker opp ved å starte nvim noen ganger. 
-- Fikse en skikkelig git integrasjon. 
+- Sette seg inn i tilgjengelig debuggere (go da?)
+- Sjekke ut plugins som er disablet. 
+  - Linting feks, fungerer det? 
+- Sjekke ut after/ftplugin, er det en god måte å stye indentering og slikt på?
+
 

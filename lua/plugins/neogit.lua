@@ -5,7 +5,7 @@ return {
     'sindrets/diffview.nvim',
   },
   keys = {
-    { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Open Neogit' },
+    { '<leader>G', '<cmd>Neogit<cr>', desc = 'Open Neogit' },
     {
       '<leader>gd',
       function()
@@ -17,7 +17,17 @@ return {
       end,
       desc = 'Open Diffview',
     },
-    { '<leader>gD', '<cmd>DiffviewOpen main<cr>', desc = 'Open Diffview (main)' },
+    {
+      '<leader>gD',
+      function()
+        if next(require('diffview.lib').views) == nil then
+          vim.cmd 'DiffviewOpen main'
+        else
+          vim.cmd 'DiffviewClose'
+        end
+      end,
+      desc = 'Open Diffview (main)',
+    },
   },
   config = function()
     require('diffview').setup {
