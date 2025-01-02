@@ -1,6 +1,7 @@
--- nvim v0.8.0
 return {
   'kdheepak/lazygit.nvim',
+  -- TODO: Remove it if NeoGit is sufficient
+  enabled = false,
   lazy = true,
   cmd = {
     'LazyGit',

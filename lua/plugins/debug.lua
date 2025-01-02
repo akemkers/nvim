@@ -8,6 +8,8 @@
 
 return {
   'mfussenegger/nvim-dap',
+  -- TODO: This is straight out of kickstart, should mess a bit with it some day
+  enabled = false,
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
