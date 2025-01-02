@@ -1,0 +1,4 @@
+- Fjerne notification popup for hver gang man gjøre en undo/redo. 
+- Fikse promten som dukker opp ved å starte nvim noen ganger. 
+- Fikse en skikkelig git integrasjon. 
+

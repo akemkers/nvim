@@ -18,9 +18,12 @@ return {
       -- require('(mini).surround').setup()
 
       require('mini.pairs').setup()
-      require('mini.notify').setup()
+      require('mini.notify').setup {
+        lsp_progress = {
+          enable = false,
+        },
+      }
       require('mini.tabline').setup()
-      require('mini.starter').setup()
       require('mini.comment').setup()
 
       vim.api.nvim_create_autocmd('FileType', {
