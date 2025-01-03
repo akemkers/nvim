@@ -3,5 +3,7 @@
 - Sjekke ut plugins som er disablet. 
   - Linting feks, fungerer det? 
 - Sjekke ut after/ftplugin, er det en god måte å stye indentering og slikt på?
+- Sjekke ut hva omnicomplete er for noe (c-x c-a)
+- jetbrains nerdfont?
 
 
