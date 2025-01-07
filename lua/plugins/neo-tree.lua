@@ -27,6 +27,9 @@ return {
         },
       },
       filesystem = {
+        group_empty_dirs = {
+          true,
+        },
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
           hide_dotfiles = false,
