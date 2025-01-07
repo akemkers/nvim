@@ -48,6 +48,7 @@ return {
       mappings = {
         popup = {
           ['L'] = 'LogPopup',
+          ['l'] = nil
         },
         status = {
           ['l'] = 'Toggle',

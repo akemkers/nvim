@@ -34,6 +34,11 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'gofmt' },
+        typescript = { 'prettier'},
+        typescriptreact = { 'prettier'},
+        javascript = { 'prettier'},
+        javascriptreact = { 'prettier'}
+
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
