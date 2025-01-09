@@ -93,7 +93,6 @@ return {
             },
           },
         },
-        ts_ls = {},
         eslint_d = {},
         bashls = {},
         jsonls = {},

@@ -1,10 +1,9 @@
 - Fjerne notification popup for hver gang man gjøre en undo/redo. 
 - Sette seg inn i tilgjengelig debuggere (go da?)
 - Sjekke ut plugins som er disablet. 
-  - Linting feks, fungerer det? 
 - Sjekke ut after/ftplugin, er det en god måte å stye indentering og slikt på?
 - Sjekke ut hva omnicomplete er for noe (c-x c-a)
 - jetbrains nerdfont?
-- er typescript tools riktig satt opp?
-
+- Finne en måte å bare linte med eslint dersom det finnes en config for det. 
+- Kjøre linten også etter sletting, liming, cutting osv. Ikke bare på insert leave og write
 

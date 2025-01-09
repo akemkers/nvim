@@ -26,20 +26,26 @@ return {
         else
           lsp_format_opt = 'fallback'
         end
+
+        -- Avoid issue where prettier runs async and makes diagnostics appear on wrong lines
+        -- might be a better way to do this
+        local disable_async_filetypes = { typescript = true, typescriptreact = true, javascript = true, javascriptreact = true }
+        local async_opt = disable_async_filetypes[vim.bo[bufnr].filetype]
+
         return {
           timeout_ms = 2000,
           lsp_format = lsp_format_opt,
+          async = async_opt,
         }
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'gofmt' },
-        typescript = { 'prettier', 'eslint_d' },
-        typescriptreact = { 'prettier', 'eslint_d' },
-        javascript = { 'prettier', 'eslint_d' },
-        javascriptreact = { 'prettier', 'eslint_d' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
+        javascript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },

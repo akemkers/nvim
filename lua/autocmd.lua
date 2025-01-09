@@ -41,9 +41,9 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-vim.api.nvim_create_autocmd('FileType', {
+vim.api.nvim_create_autocmd('Filetype', {
   desc = 'Sets desired indentation for web dev files',
-  pattern = { 'js', 'ts', 'tsx', 'jsx', 'css', 'svg' },
+  pattern = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'svg' },
   callback = function()
     vim.opt_local.expandtab = true
     vim.opt_local.shiftwidth = 2
