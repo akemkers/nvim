@@ -27,15 +27,9 @@ return {
           lsp_format_opt = 'fallback'
         end
 
-        -- Avoid issue where prettier runs async and makes diagnostics appear on wrong lines
-        -- might be a better way to do this
-        local disable_async_filetypes = { typescript = true, typescriptreact = true, javascript = true, javascriptreact = true }
-        local async_opt = disable_async_filetypes[vim.bo[bufnr].filetype]
-
         return {
           timeout_ms = 2000,
           lsp_format = lsp_format_opt,
-          async = async_opt,
         }
       end,
       formatters_by_ft = {

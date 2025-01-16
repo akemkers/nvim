@@ -43,7 +43,18 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.api.nvim_create_autocmd('Filetype', {
   desc = 'Sets desired indentation for web dev files',
-  pattern = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'svg' },
+  pattern = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'svg', 'less', 'html' },
+  callback = function()
+    vim.opt_local.expandtab = true
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
+
+vim.api.nvim_create_autocmd('Filetype', {
+  desc = 'Sets desired indentation for lua files',
+  pattern = 'lua',
   callback = function()
     vim.opt_local.expandtab = true
     vim.opt_local.shiftwidth = 2

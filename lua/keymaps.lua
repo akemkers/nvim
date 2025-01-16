@@ -18,8 +18,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Buffer navigation
 vim.keymap.set('n', 'L', ':bnext<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', 'H', ':bprevious<cr>', { noremap = true, silent = true })
-vim.keymap.set('n', 'bd', ':bdelete<cr>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>bd', function()
+vim.keymap.set('n', '<leader>bd', ':bdelete<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>bo', function()
   local current_buf = vim.api.nvim_get_current_buf()
   local buffers = vim.api.nvim_list_bufs()
 
