@@ -96,7 +96,11 @@ return {
         eslint_d = {},
         bashls = {},
         jsonls = {},
-        tailwindcss = {},
+        tailwindcss = {
+          settings = {
+            classAttributes = { 'class', 'className', 'classNames', 'clsx', 'cva' },
+          },
+        },
         lua_ls = {
           settings = {
             Lua = {
