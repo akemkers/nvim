@@ -5,5 +5,5 @@
 - Sjekke ut hva omnicomplete er for noe (c-x c-a)
 - jetbrains nerdfont?
 - Finne en måte å bare linte med eslint dersom det finnes en config for det. 
-- Kjøre linten også etter sletting, liming, cutting osv. Ikke bare på insert leave og write
+- Kjøre linten også etter sletting, liming, cutting osv. Ikke bare på insert leave og write.
 
