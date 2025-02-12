@@ -39,6 +39,7 @@ return {
         typescriptreact = { 'prettier' },
         javascript = { 'prettier' },
         javascriptreact = { 'prettier' },
+        css = { 'prettier' },
         python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
