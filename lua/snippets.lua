@@ -10,7 +10,9 @@ ls.add_snippets('lua', {
   s('print', fmt('print("{}")', { i(1, 'text') })),
 })
 
---  React snippets
+--  REACT SNIPPETS
+--
+-- React component snippets
 ls.add_snippets('typescriptreact', {
   s(
     'rfc',
@@ -33,6 +35,7 @@ export const {}: React.FC<Props> = ({{ {} }}) => {{
   ),
 })
 
+-- React functional component without props and state
 ls.add_snippets('typescriptreact', {
   s(
     'rfcnp',
