@@ -23,6 +23,8 @@ return {
         'yaml',
         'javascript',
         'typescript',
+        'kotlin',
+        'java',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
