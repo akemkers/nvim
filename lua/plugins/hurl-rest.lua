@@ -13,7 +13,7 @@ return {
     --   ft = { 'markdown' },
     -- },
   },
-  ft = 'hurl',
+  ft = { 'hurl', 'http' },
   opts = {
     -- Show debugging info
     debug = false,

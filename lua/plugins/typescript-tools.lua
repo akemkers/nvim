@@ -19,4 +19,10 @@ return {
     vim.keymap.set('n', '<leader>ci', '<Cmd>TSToolsAddMissingImports<CR>', { desc = 'Add missing imports' })
     vim.keymap.set('n', '<leader>cR', '<Cmd>TSToolsRenameFile<CR>', { desc = 'Rename file' })
   end,
+  ft = {
+    'typescript',
+    'typescriptreact',
+    'javascript',
+    'javascriptreact',
+  },
 }

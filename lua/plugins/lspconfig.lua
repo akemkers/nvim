@@ -12,9 +12,13 @@ return {
       },
     },
   },
-  { 'Bilal2453/luvit-meta', lazy = true },
+  {
+    'Bilal2453/luvit-meta',
+    ft = 'lua',
+  },
   {
     'neovim/nvim-lspconfig',
+    event = 'VeryLazy',
     dependencies = {
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',

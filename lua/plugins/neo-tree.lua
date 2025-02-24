@@ -6,7 +6,6 @@ return {
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
   },
-  event = 'VimEnter',
   config = function()
     require('neo-tree').setup {
       close_if_last_window = true,
@@ -60,8 +59,8 @@ return {
         },
       },
     }
-
-    -- keymaps
-    vim.keymap.set('n', '<leader>e', '<Cmd>Neotree reveal<CR>')
   end,
+  keys = {
+    { '<leader>e', '<Cmd>Neotree reveal<CR>', desc = 'Toggle NeoTree' },
+  },
 }
