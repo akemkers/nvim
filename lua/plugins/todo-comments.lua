@@ -1,5 +1,4 @@
 -- Highlight todo, notes, etc in comments
--- TODO: hei
 return {
   {
     'folke/todo-comments.nvim',

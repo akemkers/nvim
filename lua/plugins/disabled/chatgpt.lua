@@ -1,5 +1,6 @@
 return {
   'jackMort/ChatGPT.nvim',
+  enabled = false,
   config = function()
     require('chatgpt').setup {
       openai_params = {

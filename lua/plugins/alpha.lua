@@ -8,10 +8,6 @@ return {
       type = 'group',
       val = {
         button('e', '  New file', '<cmd>ene <CR>'),
-        button('s', '󰈞  Search file', '<cmd>Telescope find_files<CR>'),
-        button('r', '  Recently opened files', "<cmd>lua require('telescope.builtin').oldfiles({ results = 10 })<CR>"),
-        button('w', '󰊄  Find word', '<cmd>Telescope live_grep<CR>'),
-        button('c', '  Search Config', "<cmd>lua require('telescope.builtin').find_files({ cwd = vim.fn.stdpath 'config' })<CR>"),
         button('q', '  Quit Neovim', '<cmd>qa<CR>'),
       },
       opts = {
@@ -19,7 +15,7 @@ return {
       },
     }
     dashboard.config.layout = {
-      { type = 'padding', val = 4 },
+      { type = 'padding', val = 16 },
       dashboard.section.header,
       { type = 'padding', val = 4 },
       buttons,
