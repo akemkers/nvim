@@ -25,6 +25,6 @@ vim.keymap.set('n', '<leader>tq', ':tabclose<cr>', { silent = true, desc = 'Quit
 vim.keymap.set('n', '<leader>tn', ':tabnext<cr>', { silent = true, desc = 'Next tab' })
 
 -- Diagnostics
-vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { silent = true, desc = 'Open Diagnostic' })
-vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true, desc = 'Open Diagnostic' })
-vim.keymap.set('n', '<leader>dd', vim.diagnostic.goto_prev, { silent = true, desc = 'Open Diagnostic' })
+--vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { silent = true, desc = 'Open Diagnostic' })
+vim.keymap.set('n', '<leader>xn', vim.diagnostic.goto_next, { silent = true, desc = 'Open Diagnostic' })
+vim.keymap.set('n', '<leader>xp', vim.diagnostic.goto_prev, { silent = true, desc = 'Open Diagnostic' })

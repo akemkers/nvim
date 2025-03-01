@@ -1,12 +1,15 @@
 return {
+  enabled = true,
   'folke/noice.nvim',
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    'MunifTanjim/nui.nvim',
+    'echasnovski/mini.nvim',
+    'rcarriga/nvim-notify',
+  },
   event = 'VeryLazy',
   opts = {
     lsp = {
-      progress = {
-        enabled = true,
-        view = 'mini', -- or "notify" if you prefer using nvim-notify
-      },
       override = {
         ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
         ['vim.lsp.util.stylize_markdown'] = true,
@@ -21,9 +24,16 @@ return {
             { find = '%d+L, %d+B' },
             { find = '; after #%d+' },
             { find = '; before #%d+' },
+            { find = '%d+ lines yanked' },
+            { find = '%d+ (fewer|more) lines' },
+            { find = '^/%S+' },
           },
         },
-        view = 'mini',
+        opts = { skip = true },
+      },
+      {
+        view = 'notify',
+        filter = { event = 'msg_showmode' },
       },
     },
 
@@ -31,6 +41,7 @@ return {
       bottom_search = false,
       command_palette = true,
       long_message_to_split = true,
+      lsp_doc_border = true,
     },
   },
   -- stylua: ignore

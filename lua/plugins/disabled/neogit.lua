@@ -1,33 +1,12 @@
 return {
   'NeogitOrg/neogit',
+  enabled = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'sindrets/diffview.nvim',
   },
   keys = {
     { '<leader>G', '<cmd>Neogit<cr>', desc = 'Open Neogit' },
-    {
-      '<leader>gd',
-      function()
-        if next(require('diffview.lib').views) == nil then
-          vim.cmd 'DiffviewOpen'
-        else
-          vim.cmd 'DiffviewClose'
-        end
-      end,
-      desc = 'Open Diffview',
-    },
-    {
-      '<leader>gD',
-      function()
-        if next(require('diffview.lib').views) == nil then
-          vim.cmd 'DiffviewOpen main'
-        else
-          vim.cmd 'DiffviewClose'
-        end
-      end,
-      desc = 'Open Diffview (main)',
-    },
   },
   config = function()
     require('diffview').setup {

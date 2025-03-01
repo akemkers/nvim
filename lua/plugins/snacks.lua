@@ -1,6 +1,7 @@
 ---@module "snacks"
 return {
   'folke/snacks.nvim',
+  event = 'VeryLazy',
   opts = {
     lazygit = {
       -- your lazygit configuration comes here

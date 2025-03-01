@@ -6,4 +6,12 @@
 - jetbrains nerdfont?
 - Finne en måte å bare linte med eslint dersom det finnes en config for det. 
 - Kjøre linten også etter sletting, liming, cutting osv. Ikke bare på insert leave og write.
+- Gå til neste feil på et vis.
+- Finne en måte å sette innstillinger for et "prosjekt" på en god måte. 
+
+Snacks picker: 
+- Burde åpne fil med en gang man trykker enter etter å ha søkt på filen
+- Burde fakisk endre directory når man trykker backspace og "." ikke endre det i visningen. 
+ 
+
 
