@@ -1,17 +1,12 @@
-- Fjerne notification popup for hver gang man gjøre en undo/redo. 
 - Sette seg inn i tilgjengelig debuggere (go da?)
 - Sjekke ut plugins som er disablet. 
-- Sjekke ut after/ftplugin, er det en god måte å stye indentering og slikt på?
 - Sjekke ut hva omnicomplete er for noe (c-x c-a)
 - jetbrains nerdfont?
 - Finne en måte å bare linte med eslint dersom det finnes en config for det. 
 - Kjøre linten også etter sletting, liming, cutting osv. Ikke bare på insert leave og write.
-- Gå til neste feil på et vis.
-- Finne en måte å sette innstillinger for et "prosjekt" på en god måte. 
 
 Snacks picker: 
 - Burde åpne fil med en gang man trykker enter etter å ha søkt på filen
-- Burde fakisk endre directory når man trykker backspace og "." ikke endre det i visningen. 
- 
+- Gjøre CD når man bruker backspace eller "."
 
 
