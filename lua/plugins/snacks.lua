@@ -42,6 +42,7 @@ return {
       end,
       desc = 'Open File Explorer',
     },
+
     -- Pickers
     {
       '<leader>sf',
@@ -129,6 +130,43 @@ return {
       end,
       desc = 'Buffer Diagnostics',
     },
+    {
+      '<leader>m',
+      function()
+        Snacks.picker.marks {
+          ['local'] = false,
+          focus = 'list',
+          transform = function(item)
+            if item.label:match '^%d$' then
+              return false -- exclude numeric marks 0–9
+            end
+            return true
+          end,
+          actions = {
+            ['delete_mark'] = function(picker)
+              local item = picker:selected { fallback = true }
+
+              if item[1] and item[1].label then
+                vim.cmd('delmarks ' .. item[1].label)
+                vim.notify('Deleted mark ' .. item[1].label)
+                picker:find()
+              else
+                vim.notify 'Did not find mark to delete'
+              end
+            end,
+          },
+          win = {
+            list = {
+              keys = {
+                ['d'] = 'delete_mark',
+              },
+            },
+          },
+        }
+      end,
+      desc = 'Marks',
+    },
+
     -- Git
     {
       '<leader>gv',
@@ -158,6 +196,7 @@ return {
       end,
       desc = 'Git Status',
     },
+
     -- LSP
     {
       'gd',
@@ -188,13 +227,7 @@ return {
       end,
       desc = 'Goto T[y]pe Definition',
     },
-    {
-      '<leader>ss',
-      function()
-        Snacks.picker.lsp_symbols()
-      end,
-      desc = 'LSP Symbols',
-    },
+
     -- Bufdelete
     {
       '<leader>bd',

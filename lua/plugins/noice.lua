@@ -35,6 +35,14 @@ return {
         view = 'notify',
         filter = { event = 'msg_showmode' },
       },
+      {
+        -- Disable annoying error from `kotlin_language_server`.
+        opts = { skip = true },
+        filter = {
+          event = 'notify',
+          find = '^kotlin_language_server: %-32603: Internal error%.$',
+        },
+      },
     },
 
     presets = {
