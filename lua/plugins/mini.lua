@@ -30,6 +30,15 @@ return {
 
       require 'plugins.mini.statusline'
       require 'plugins.mini.animate'
+      local minifiles = require 'mini.files'
+      minifiles.setup {
+        mappings = {
+          close = '<Esc>',
+        },
+      }
+
+      -- Keymaps
+      vim.keymap.set('n', '-', minifiles.open, { desc = 'Open minifiles', noremap = true })
     end,
   },
 }

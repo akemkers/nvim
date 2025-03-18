@@ -1,5 +1,4 @@
 return {
-  enabled = false,
   'nvim-neo-tree/neo-tree.nvim',
   branch = 'v3.x',
   dependencies = {
@@ -11,8 +10,14 @@ return {
     require('neo-tree').setup {
       close_if_last_window = true,
       popup_border_style = 'rounded',
-      default_components_config = {
+      default_component_configs = {
         file_size = {
+          enabled = false,
+        },
+        last_modified = {
+          enabled = false,
+        },
+        type = {
           enabled = false,
         },
       },
@@ -27,9 +32,7 @@ return {
         },
       },
       filesystem = {
-        group_empty_dirs = {
-          true,
-        },
+        group_empty_dirs = true,
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
           hide_dotfiles = false,

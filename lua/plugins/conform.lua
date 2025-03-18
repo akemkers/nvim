@@ -41,6 +41,7 @@ return {
         javascriptreact = { 'prettier' },
         css = { 'prettier' },
         python = { 'isort', 'black' },
+        --xml = { 'xmlformatter' }, TODO: Fikse 2 indent formattering
         -- kotlin = { 'ktfmt' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
