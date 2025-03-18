@@ -14,35 +14,35 @@ return {
   },
   keys = {
     -- Explorer
-    -- {
-    --   '<leader>e',
-    --   function()
-    --     ---@diagnostic disable: missing-fields
-    --     Snacks.explorer {
-    --       hidden = true,
-    --       follow_file = true,
-    --       replace_netrw = true,
-    --       layout = {
-    --         preset = function()
-    --           return vim.o.columns >= 120 and 'default' or 'vertical'
-    --         end,
-    --         layout = {
-    --           width = 0.3,
-    --         },
-    --       },
-    --       windows = {
-    --         input = {
-    --           keys = {
-    --             ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
-    --             [','] = { 'cd', mode = { 'n' } },
-    --           },
-    --         },
-    --       },
-    --       auto_close = true,
-    --     }
-    --   end,
-    --   desc = 'Open File Explorer',
-    -- },
+    {
+      '<leader>E',
+      function()
+        ---@diagnostic disable: missing-fields
+        Snacks.explorer {
+          hidden = true,
+          follow_file = true,
+          replace_netrw = true,
+          layout = {
+            preset = function()
+              return vim.o.columns >= 120 and 'default' or 'vertical'
+            end,
+            layout = {
+              width = 0.3,
+            },
+          },
+          windows = {
+            input = {
+              keys = {
+                ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+                [','] = { 'cd', mode = { 'n' } },
+              },
+            },
+          },
+          auto_close = true,
+        }
+      end,
+      desc = 'Open File Explorer',
+    },
 
     -- Pickers
     {
