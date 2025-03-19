@@ -25,20 +25,13 @@ return {
           enable = false,
         },
       }
-      require('mini.tabline').setup()
       require('mini.comment').setup()
+      require('mini.splitjoin').setup()
 
       require 'plugins.mini.statusline'
       require 'plugins.mini.animate'
-      local minifiles = require 'mini.files'
-      minifiles.setup {
-        mappings = {
-          close = '<Esc>',
-        },
-      }
-
-      -- Keymaps
-      vim.keymap.set('n', '-', minifiles.open, { desc = 'Open minifiles', noremap = true })
+      require 'plugins.mini.files'
+      require 'plugins.mini.tabline'
     end,
   },
 }

@@ -1,6 +1,8 @@
 require('lazy').setup {
   spec = {
-    { import = 'plugins' },
+    {
+      import = 'plugins',
+    },
   },
   change_detection = {
     enabled = false,

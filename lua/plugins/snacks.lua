@@ -15,7 +15,7 @@ return {
   keys = {
     -- Explorer
     {
-      '<leader>E',
+      '<leader>e',
       function()
         ---@diagnostic disable: missing-fields
         Snacks.explorer {

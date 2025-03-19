@@ -14,6 +14,7 @@ return {
         file_size = {
           enabled = false,
         },
+        ---@diagnostic disable: missing-fields
         last_modified = {
           enabled = false,
         },
@@ -22,7 +23,7 @@ return {
         },
       },
       window = {
-        position = 'float',
+        position = 'left',
         mappings = {
           ['l'] = 'open',
           ['h'] = 'close_node',
@@ -33,6 +34,9 @@ return {
       },
       filesystem = {
         group_empty_dirs = true,
+        follow_current_file = {
+          enabled = true,
+        },
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
           hide_dotfiles = false,
@@ -57,14 +61,11 @@ return {
           never_show_by_pattern = { -- uses glob style patterns
             --".null-ls_*",
           },
-          follow_current_file = {
-            enabled = true,
-          },
         },
       },
     }
   end,
   keys = {
-    { '<leader>e', '<Cmd>Neotree reveal<CR>', desc = 'Toggle NeoTree' },
+    { '<leader>ue', '<Cmd>Neotree toggle<CR>', desc = 'Toggle NeoTree' },
   },
 }
