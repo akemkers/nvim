@@ -10,12 +10,37 @@ return {
       javascriptreact = { 'eslint_d' },
     }
 
+    local lint_enabled = true
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
-    vim.api.nvim_create_autocmd({ 'bufenter', 'bufwritepost', 'insertleave' }, {
-      group = lint_augroup,
-      callback = function()
-        lint.try_lint()
-      end,
-    })
+
+    local function setup_linting()
+      vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
+        group = lint_augroup,
+        callback = function()
+          lint.try_lint()
+        end,
+      })
+    end
+
+    -- Run the setup at startup
+    setup_linting()
+
+    -- Toggle function
+    function ToggleLint()
+      lint_enabled = not lint_enabled
+      if lint_enabled then
+        setup_linting()
+        vim.notify('nvim-lint ON', vim.log.levels.INFO)
+      else
+        vim.api.nvim_clear_autocmds { group = lint_augroup }
+        vim.notify('nvim-lint OFF', vim.log.levels.INFO)
+
+        -- Clear lint errors from the buffer
+        vim.diagnostic.reset()
+      end
+    end
+
+    -- Keymap
+    vim.keymap.set('n', '<leader>ul', ToggleLint, { silent = true, noremap = true, desc = 'Toggle Linting' })
   end,
 }
