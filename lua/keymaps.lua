@@ -28,3 +28,7 @@ vim.keymap.set('n', '<leader>tn', ':tabnext<cr>', { silent = true, desc = 'Next 
 --vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { silent = true, desc = 'Open Diagnostic' })
 vim.keymap.set('n', '<leader>xn', vim.diagnostic.goto_next, { silent = true, desc = 'Open Diagnostic' })
 vim.keymap.set('n', '<leader>xp', vim.diagnostic.goto_prev, { silent = true, desc = 'Open Diagnostic' })
+
+-- QoL
+vim.keymap.set('n', 'Y', 'y$', { desc = 'Yanks to end of line, like C or D' })
+vim.keymap.set('n', 'Q', '@q', { desc = 'Repeats the last macro saved to q' })

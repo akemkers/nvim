@@ -26,7 +26,11 @@ return {
         },
       }
       require('mini.comment').setup()
-      require('mini.splitjoin').setup()
+      require('mini.splitjoin').setup {
+        mappings = {
+          toggle = 'gs',
+        },
+      }
 
       require 'plugins.mini.statusline'
       require 'plugins.mini.animate'
@@ -35,4 +39,3 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
