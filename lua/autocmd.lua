@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.api.nvim_create_autocmd('Filetype', {
   desc = 'Sets 2 space indentation for selected filetypes',
-  pattern = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'svg', 'less', 'html', 'jsonc', 'json', 'http', 'lua' },
+  pattern = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'svg', 'less', 'html', 'jsonc', 'json', 'http', 'lua', 'hurl' },
   callback = function()
     vim.opt_local.expandtab = true
     vim.opt_local.shiftwidth = 2

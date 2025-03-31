@@ -50,14 +50,14 @@ return {
       function()
         Snacks.picker.files()
       end,
-      { noremap = true, silent = true, desc = 'Search Files' },
+      desc = 'Search Files',
     },
     {
       '<leader>:',
       function()
         Snacks.picker.command_history()
       end,
-      { noremap = true, silent = true, desc = 'Search Command History' },
+      desc = 'Command History',
     },
     {
       '<leader>sc',
@@ -65,7 +65,7 @@ return {
         --- @diagnostic disable-next-line: assign-type-mismatch
         Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
       end,
-      { noremap = true, silent = true, desc = 'Search Config' },
+      desc = 'Config Files',
     },
     {
       '<leader>sw',
@@ -94,35 +94,35 @@ return {
       function()
         Snacks.picker.buffers()
       end,
-      { noremap = true, silent = true, desc = 'Search Buffers' },
+      desc = 'Search Buffers',
     },
     {
       '<leader>sh',
       function()
         Snacks.picker.help()
       end,
-      { noremap = true, silent = true, desc = 'Search Help Pages' },
+      desc = 'Search Help',
     },
     {
       '<leader>sk',
       function()
         Snacks.picker.keymaps()
       end,
-      { noremap = true, silent = true, desc = 'Search Keymaps' },
+      desc = 'Search Keymaps',
     },
     {
       '<leader>sg',
       function()
         Snacks.picker.grep()
       end,
-      { noremap = true, silent = true, desc = 'Search Grep' },
+      desc = 'Grep',
     },
     {
-      '<leader>sd',
+      '<leader>ss',
       function()
-        Snacks.picker.diagnostics()
+        Snacks.picker.lsp_symbols()
       end,
-      desc = 'Diagnostics',
+      desc = 'Synbolds for buffer',
     },
     {
       '<leader>sD',

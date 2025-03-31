@@ -81,7 +81,11 @@ return {
       require('mason').setup()
 
       local servers = {
-        gopls = {},
+        gopls = {
+          settings = {
+            staticcheck = true,
+          },
+        },
         html = {},
         cssls = {
           settings = {
@@ -111,6 +115,7 @@ return {
           },
         },
         kotlin_language_server = {},
+        staticcheck = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
