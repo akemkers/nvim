@@ -82,9 +82,27 @@ return {
 
       local servers = {
         gopls = {
-          settings = {
-            staticcheck = true,
-          },
+          -- settings = {
+          --   gopls = {
+          --     analyses = {
+          --       unusedparams = true,
+          --       unreachable = true,
+          --       shadow = true,
+          --       nilness = true,
+          --       fieldalignment = true,
+          --     },
+          --     staticcheck = true,
+          --     usePlaceholders = true,
+          --     completeUnimported = true,
+          --     codelenses = {
+          --       generate = true,
+          --       gc_details = true,
+          --       test = true,
+          --       tidy = true,
+          --       upgrade_dependency = true,
+          --     },
+          --   },
+          -- },
         },
         html = {},
         cssls = {
@@ -96,7 +114,6 @@ return {
             },
           },
         },
-        eslint_d = {},
         bashls = {},
         jsonls = {},
         tailwindcss = {
@@ -115,19 +132,30 @@ return {
           },
         },
         kotlin_language_server = {},
-        staticcheck = {},
+        golangci_lint_ls = {
+          settings = {
+            default_config = {
+              init_options = {
+                command = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--issues-exit-code=1', '--show-stats=false' },
+              },
+            },
+          },
+        },
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
+      local tools_ensure_installed = {
         'stylua', -- Used to format Lua code
         'prettier',
         'ktfmt',
-      })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed, automatic_installation = true }
+        'eslint_d',
+        'golangci_lint',
+      }
+
+      require('mason-tool-installer').setup { ensure_installed = tools_ensure_installed, automatic_installation = true }
 
       require('mason-lspconfig').setup {
-        ensure_installed = vim.tbl_keys(servers or {}),
+        ensure_installed = ensure_installed,
         automatic_installation = true,
         handlers = {
           function(server_name)

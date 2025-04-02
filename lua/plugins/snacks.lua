@@ -48,7 +48,9 @@ return {
     {
       '<leader>sf',
       function()
-        Snacks.picker.files()
+        Snacks.picker.files {
+          hidden = true,
+        }
       end,
       desc = 'Search Files',
     },
@@ -76,23 +78,18 @@ return {
       mode = { 'n', 'x' },
     },
     {
-      '<leader><leader>',
+      '<leader>sr',
       function()
         Snacks.picker.resume()
       end,
       desc = 'Resume Last Picker',
     },
     {
-      '<leader>sr',
+      '<leader><leader>',
       function()
-        Snacks.picker.recent()
-      end,
-      desc = 'Recent Files',
-    },
-    {
-      '<leader>sb',
-      function()
-        Snacks.picker.buffers()
+        Snacks.picker.buffers {
+          focus = 'list',
+        }
       end,
       desc = 'Search Buffers',
     },

@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   'mfussenegger/nvim-lint',
   event = 'VeryLazy',
   config = function()
@@ -8,7 +9,10 @@ return {
       typescript = { 'eslint_d' },
       typescriptreact = { 'eslint_d' },
       javascriptreact = { 'eslint_d' },
+      --go = { 'golangcilint' },
     }
+
+    --lint.linters.golangcilint.args = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--issues-exit-code=1', '--show-stats=false' }
 
     local lint_enabled = true
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
