@@ -228,7 +228,7 @@ return {
       desc = 'References',
     },
     {
-      'gI',
+      'gi',
       function()
         Snacks.picker.lsp_implementations()
       end,
