@@ -82,6 +82,7 @@ return {
 
       local servers = {
         gopls = {
+          -- TODO: Usikker på om dette egentlig fungerer, må ta en titt
           -- settings = {
           --   gopls = {
           --     analyses = {
@@ -132,15 +133,16 @@ return {
           },
         },
         kotlin_language_server = {},
-        golangci_lint_ls = {
-          settings = {
-            default_config = {
-              init_options = {
-                command = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--issues-exit-code=1', '--show-stats=false' },
-              },
-            },
-          },
-        },
+        -- TODO: Oppleves som ganske sluggish, tror vi går for nvim-lint
+        -- golangci_lint_ls = {
+        --   settings = {
+        --     default_config = {
+        --       init_options = {
+        --         command = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--issues-exit-code=1', '--show-stats=false' },
+        --       },
+        --     },
+        --   },
+        -- },
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -149,7 +151,7 @@ return {
         'prettier',
         'ktfmt',
         'eslint_d',
-        'golangci_lint',
+        --'golangci_lint', TODO: Kjører manuell installasjon av eldre versjon frem til nvim.lint er oppdatert med v2 av golangci_lint
       }
 
       require('mason-tool-installer').setup { ensure_installed = tools_ensure_installed, automatic_installation = true }

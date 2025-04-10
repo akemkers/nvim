@@ -191,9 +191,19 @@ return {
       '<leader>gs',
       function()
         Snacks.picker.git_status {
+          focus = 'list',
           formatters = {
             file = {
               filename_first = true,
+            },
+          },
+          previewers = {
+            diff = {
+              builtin = false,
+              cmd = { 'delta' },
+            },
+            git = {
+              builtin = false,
             },
           },
         }
