@@ -26,9 +26,17 @@ vim.keymap.set('n', '<leader>tn', ':tabnext<cr>', { silent = true, desc = 'Next 
 
 -- Diagnostics
 --vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { silent = true, desc = 'Open Diagnostic' })
-vim.keymap.set('n', '<leader>xn', vim.diagnostic.goto_next, { silent = true, desc = 'Open Diagnostic' })
-vim.keymap.set('n', '<leader>xp', vim.diagnostic.goto_prev, { silent = true, desc = 'Open Diagnostic' })
+vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true, desc = 'Open Diagnostic' })
+vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true, desc = 'Open Diagnostic' })
 
 -- QoL
 vim.keymap.set('n', 'Y', 'y$', { desc = 'Yanks to end of line, like C or D' })
 vim.keymap.set('n', 'Q', '@q', { desc = 'Repeats the last macro saved to q' })
+
+
+-- Remapping for the 'ø' and 'æ' keys, change here to make them do something useful
+vim.keymap.set({ "n", "o", "x" }, "ø", "/", { remap = true })
+--vim.keymap.set({ "n", "v", "o", "c" }, "Ø", "{") -- Shift+ø for {
+
+vim.keymap.set({ "n", "o", "x" }, "æ", ":", { remap = true })
+--vim.keymap.set({ "n", "v", "o", "c" }, "Æ", "}") -- Shift+æ for }

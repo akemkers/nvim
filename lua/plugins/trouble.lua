@@ -4,17 +4,17 @@ return {
   cmd = 'Trouble',
   keys = {
     {
-      '<leader>xX',
+      '<leader>dS',
       '<cmd>Trouble diagnostics toggle focus=true<cr>',
       desc = 'Diagnostics (Trouble)',
     },
     {
-      '<leader>xx',
+      '<leader>ds',
       '<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<cr>',
       desc = 'Buffer Diagnostics (Trouble)',
     },
     {
-      '<leader>xQ',
+      '<leader>dq',
       '<cmd>Trouble qflist toggle<cr>',
       desc = 'Quickfix List (Trouble)',
     },

@@ -26,7 +26,7 @@ return {
             preset = function()
               return vim.o.columns >= 120 and 'default' or 'vertical'
             end,
-            layout = {
+            layou = {
               width = 0.3,
             },
           },
@@ -72,7 +72,9 @@ return {
     {
       '<leader>sw',
       function()
-        Snacks.picker.grep_word()
+        Snacks.picker.grep_word({
+          focus = 'list',
+        })
       end,
       desc = 'Visual Selection or Word',
       mode = { 'n', 'x' },
@@ -117,16 +119,11 @@ return {
     {
       '<leader>ss',
       function()
-        Snacks.picker.lsp_symbols()
+        Snacks.picker.lsp_symbols({
+          focus = 'list',
+        })
       end,
       desc = 'Synbolds for buffer',
-    },
-    {
-      '<leader>sD',
-      function()
-        Snacks.picker.diagnostics_buffer()
-      end,
-      desc = 'Buffer Diagnostics',
     },
     {
       '<leader>m',
@@ -176,14 +173,18 @@ return {
     {
       '<leader>gb',
       function()
-        Snacks.picker.git_branches()
+        Snacks.picker.git_branches({
+          focus = 'list',
+        })
       end,
       desc = 'Git Branches',
     },
     {
       '<leader>gl',
       function()
-        Snacks.picker.git_log()
+        Snacks.picker.git_log({
+          focus = 'list',
+        })
       end,
       desc = 'Git Log',
     },
@@ -215,14 +216,23 @@ return {
     {
       'gd',
       function()
-        Snacks.picker.lsp_definitions()
+        Snacks.picker.lsp_definitions({
+          focus = 'list',
+          previewers = {
+            lsp = {
+              builtin = false,
+            },
+          },
+        })
       end,
       desc = 'Goto Definition',
     },
     {
       'gr',
       function()
-        Snacks.picker.lsp_references()
+        Snacks.picker.lsp_references({
+          focus = 'list',
+        })
       end,
       nowait = true,
       desc = 'References',
@@ -230,7 +240,9 @@ return {
     {
       'gi',
       function()
-        Snacks.picker.lsp_implementations()
+        Snacks.picker.lsp_implementations({
+          focus = 'list',
+        })
       end,
       desc = 'Goto Implementation',
     },

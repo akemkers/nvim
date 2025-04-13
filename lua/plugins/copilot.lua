@@ -17,6 +17,7 @@ return {
       end
     end
 
-    vim.keymap.set('n', '<leader>uc', '<cmd>lua ToggleCopilot()<cr>', { noremap = true, silent = true, desc = 'Toggle Copilot' })
+    vim.keymap.set('n', '<leader>uc', '<cmd>lua ToggleCopilot()<cr>',
+      { noremap = true, silent = true, desc = 'Toggle Copilot' })
   end,
 }
