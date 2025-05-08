@@ -36,6 +36,17 @@ return {
 
           map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+          map('<leader>co', function()
+            vim.lsp.buf.code_action {
+              -- only run the "source.organizeImports" action
+              ---@diagnostic disable: missing-fields
+              context = {
+                only = { 'source.organizeImports' },
+              },
+              -- apply immediately (skip the selection window)
+              apply = true,
+            }
+          end, '[C]ode [O]rganize Imports')
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- The following two autocommands are used to highlight references of the
