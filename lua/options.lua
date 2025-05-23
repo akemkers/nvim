@@ -64,10 +64,25 @@ vim.opt.scrolloff = 10
 
 -- diagnostics virtual text
 vim.diagnostic.config {
-  virtual_text = {
-    prefix = '●', -- Could be '●', '▎', 'x'
-    spacing = 4,
-    current_line = true,
+  -- virtual_text = {
+  --   prefix = '●', -- Could be '●', '▎', 'x'
+  --   spacing = 4,
+  --   current_line = true,
+  --   position = 'eol', -- Position of virtual text, eol or inline
+  -- },
+  virtual_text = false,
+  signs = true,
+  underline = true,
+
+  float = {
+    source = true,
+    border = 'rounded',
+    focusable = false,
+    header = { ' Diagnostic' },
+    -- indent markers for multi-line messages
+    indent_markers = {
+      enable = true,
+    },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
