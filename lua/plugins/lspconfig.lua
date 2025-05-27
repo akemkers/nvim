@@ -22,7 +22,6 @@ return {
     dependencies = {
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       require('lsp.init').setup()

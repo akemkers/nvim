@@ -1,0 +1,24 @@
+{
+"React FC with Props": {
+    "prefix": "rfc",
+    "body": [
+      "type Props = {",
+      "    ${2:param}: string",
+      "}",
+      "",
+      "export const ${1:ComponentName}: React.FC<Props> = ({ ${2} }) => {",
+      "    ",
+      "}"
+    ],
+    "description": "React functional component with props"
+  },
+  "React FC No Props": {
+    "prefix": "rfcnp",
+    "body": [
+      "export const ${1:ComponentName}: React.FC = () => {",
+      "    ",
+      "}"
+    ],
+    "description": "React functional component without props"
+  }
+}

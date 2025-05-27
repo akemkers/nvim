@@ -38,8 +38,8 @@ vim.keymap.set('n', 'Y', 'y$', { desc = 'Yanks to end of line, like C or D' })
 vim.keymap.set('n', 'Q', '@q', { desc = 'Repeats the last macro saved to q' })
 
 -- Remapping for the 'ø' and 'æ' keys, change here to make them do something useful
-vim.keymap.set({ 'n', 'o', 'x' }, 'ø', '/', { remap = true })
+vim.keymap.set({ 'n', 'o', 'x' }, 'æ', '/', { remap = true })
 --vim.keymap.set({ "n", "v", "o", "c" }, "Ø", "{") -- Shift+ø for {
 
-vim.keymap.set({ 'n', 'o', 'x' }, 'æ', ':', { remap = true })
+vim.keymap.set({ 'n', 'o', 'x' }, 'ø', ':', { remap = true })
 --vim.keymap.set({ "n", "v", "o", "c" }, "Æ", "}") -- Shift+æ for }

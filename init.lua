@@ -13,7 +13,6 @@ require 'keymaps'
 require 'autocmd'
 require 'lazy-bootstrap'
 require 'lazy-plugins'
-require 'snippets'
 require 'utils.inspect'
 
 vim.cmd 'colorscheme catppuccin'
