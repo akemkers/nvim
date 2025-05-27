@@ -1,66 +1,31 @@
 local M = {}
 
 function M.setup()
-  require('lsp.attach').setup()
   require('mason').setup()
 
-  local capabilities = require 'lsp.capabilities'
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-  local servers = {
-    gopls = {},
-    html = {},
-    cssls = {
-      settings = {
-        css = {
-          lint = {
-            unknownAtRules = 'ignore', -- to avoid tailwindcss warnings
-          },
-        },
-      },
-    },
-    bashls = {},
-    jsonls = {},
-    tailwindcss = {
-      settings = {
-        classAttributes = { 'class', 'className', 'classNames', 'clsx', 'cva' },
-      },
-    },
-    lua_ls = {
-      settings = {
-        Lua = {
-          -- This is what makes it possible to tab through prefilled function parameters
-          completion = {
-            callSnippet = 'Replace',
-          },
-        },
-      },
-    },
-    rust_analyzer = {},
-    kotlin_language_server = {},
-  }
+  vim.lsp.config('*', {
+    capabilities = capabilities,
+    on_attach = require('lsp.attach').on_attach,
+  })
 
-  local ensure_installed = vim.tbl_keys(servers or {})
-  local tools_ensure_installed = {
-    'stylua',
-    'prettier',
-    'ktfmt',
-    'eslint_d',
-    --'golangci_lint', TODO: Kjører manuell installasjon av eldre versjon frem til nvim.lint er oppdatert med v2 av golangci_lint
-  }
+  local servers = require 'lsp.servers'
+  local tools = require 'lsp.tools'
 
-  require('mason-tool-installer').setup { ensure_installed = tools_ensure_installed, automatic_installation = true }
+  local server_names = vim.tbl_keys(servers or {})
+  local ensure_installed = vim.list_extend(vim.deepcopy(server_names), tools)
 
-  require('mason-lspconfig').setup {
+  require('mason-tool-installer').setup {
     ensure_installed = ensure_installed,
     automatic_installation = true,
-    handlers = {
-      function(server_name)
-        local server = servers[server_name] or {}
-        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-        require('lspconfig')[server_name].setup(server)
-      end,
-    },
   }
+
+  for _, server_name in ipairs(server_names) do
+    vim.lsp.config(server_name, servers[server_name])
+    vim.lsp.enable(server_name)
+  end
 end
 
 return M

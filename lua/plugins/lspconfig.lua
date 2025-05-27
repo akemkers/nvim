@@ -21,12 +21,11 @@ return {
     event = 'VeryLazy',
     dependencies = {
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
-      'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
-      require('lsp').setup()
+      require('lsp.init').setup()
     end,
   },
 }
