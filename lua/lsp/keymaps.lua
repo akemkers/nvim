@@ -1,5 +1,6 @@
 local M = {}
 
+--- Keymaps for LSP. Se also snacks.lua for keymaps which opens LSP information in a picker.
 ---@param client_id (integer) the client id
 ---@param bufnr (integer) Buffer handle, or 0 for current
 function M.setup(client_id, bufnr)
@@ -26,9 +27,9 @@ function M.setup(client_id, bufnr)
   local client = vim.lsp.get_client_by_id(client_id)
   -- Creates a keymap to toggle inlay hints in your
   if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-    map('<leader>th', function()
+    map('<leader>uh', function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = bufnr })
-    end, '[T]oggle Inlay [H]ints')
+    end, 'Toggle Inlay Hints')
   end
 end
 
