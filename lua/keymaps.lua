@@ -25,10 +25,13 @@ vim.keymap.set('n', '<leader>tq', ':tabclose<cr>', { silent = true, desc = 'Quit
 vim.keymap.set('n', '<leader>tn', ':tabnext<cr>', { silent = true, desc = 'Next tab' })
 
 -- Diagnostics
---vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { silent = true, desc = 'Open Diagnostic' })
-vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true, desc = 'Open Diagnostic' })
-vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true, desc = 'Open Diagnostic' })
-vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { silent = true, desc = 'Open Diagnostic List' })
+vim.keymap.set('n', '<leader>dn', function()
+  vim.diagnostic.jump { count = 1, float = true }
+end, { silent = true, desc = 'Open next diagnostic' })
+vim.keymap.set('n', '<leader>dp', function()
+  vim.diagnostic.jump { count = -1, float = true }
+end, { silent = true, desc = 'Open previous diagnostic' })
+vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { silent = true, desc = 'Open diagnostic for current line' })
 
 -- QoL
 vim.keymap.set('n', 'Y', 'y$', { desc = 'Yanks to end of line, like C or D' })
