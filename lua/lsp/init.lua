@@ -7,7 +7,7 @@ function M.setup()
 
   vim.lsp.config('*', {
     capabilities = capabilities,
-    on_attach = require('lsp.attach').on_attach,
+    on_attach = require('lsp.attach').setup(),
   })
 
   local servers = require 'lsp.servers'

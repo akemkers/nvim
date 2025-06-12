@@ -8,7 +8,7 @@ return {
   opts = {
     keymap = {
       preset = 'enter',
-      ['<Tab>'] = { 'show', 'show_documentation', 'hide_documentation', 'fallback' },
+      ['<S-Tab>'] = { 'show', 'show_documentation', 'hide_documentation', 'fallback' },
     },
 
     appearance = {

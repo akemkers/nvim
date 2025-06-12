@@ -5,8 +5,6 @@
 
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -64,13 +62,13 @@ vim.opt.scrolloff = 10
 
 -- diagnostics virtual text
 vim.diagnostic.config {
-  -- virtual_text = {
-  --   prefix = '●', -- Could be '●', '▎', 'x'
-  --   spacing = 4,
-  --   current_line = true,
-  --   position = 'eol', -- Position of virtual text, eol or inline
-  -- },
-  virtual_text = false,
+  virtual_text = {
+    prefix = '●', -- Could be '●', '▎', 'x'
+    spacing = 4,
+    current_line = true,
+    position = 'eol', -- Position of virtual text, eol or inline
+  },
+  -- virtual_lines = true,
   signs = true,
   underline = true,
 
