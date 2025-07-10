@@ -61,6 +61,12 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 8
 
+-- Needed to display colors properly for colorizer.nvim
+vim.opt.termguicolors = true
+
+-- Turn off linewrapping
+vim.opt.wrap = false
+
 -- diagnostics virtual text
 vim.diagnostic.config {
   virtual_text = {
