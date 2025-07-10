@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.api.nvim_create_autocmd('FileType', {
   desc = 'Sets desired indentation for go files',
-  pattern = { 'go', 'kotlin', 'xml' },
+  pattern = { 'go', 'kotlin', 'xml', 'fish' },
   callback = function()
     vim.opt_local.expandtab = true
     vim.opt_local.shiftwidth = 4

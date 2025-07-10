@@ -11,6 +11,7 @@ return {
     picker = {},
     explorer = {},
     input = {},
+    bigfile = {},
   },
   keys = {
     -- Explorer
@@ -89,9 +90,7 @@ return {
     {
       '<leader><leader>',
       function()
-        Snacks.picker.buffers {
-          focus = 'list',
-        }
+        Snacks.picker.buffers()
       end,
       desc = 'Search Buffers',
     },
