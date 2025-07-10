@@ -60,6 +60,12 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Needed to display colors properly for colorizer.nvim
+vim.opt.termguicolors = true
+
+-- Turn off linewrapping
+vim.opt.wrap = false
+
 -- diagnostics virtual text
 vim.diagnostic.config {
   virtual_text = {
