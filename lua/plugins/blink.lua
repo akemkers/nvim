@@ -29,4 +29,16 @@ return {
     fuzzy = { implementation = 'prefer_rust_with_warning' },
   },
   opts_extend = { 'sources.default' },
+  
+  config = function(_, opts)
+    require('blink.cmp').setup(opts)
+    
+    -- Disable completion for specific filetypes
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = { 'minifiles', 'DiffviewFiles', 'DiffviewFileHistory' },
+      callback = function()
+        vim.b.completion = false
+      end,
+    })
+  end,
 }
