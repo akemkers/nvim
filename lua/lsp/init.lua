@@ -8,6 +8,15 @@ function M.setup()
   vim.lsp.config('*', {
     capabilities = capabilities,
     on_attach = require('lsp.attach').setup(),
+    root_dir = function(bufnr)
+      -- Don't attach to diffview buffers
+      local bufname = vim.api.nvim_buf_get_name(bufnr)
+      if bufname:match('^diffview://') then
+        return nil
+      end
+      -- Return current working directory for other files
+      return vim.fn.getcwd()
+    end,
   })
 
   local servers = require 'lsp.servers'
