@@ -9,9 +9,10 @@ function M.setup()
     capabilities = capabilities,
     on_attach = require('lsp.attach').setup(),
     root_dir = function(bufnr)
-      -- Don't attach to diffview buffers
+      -- Don't attach to diffview or mini.files buffers
       local bufname = vim.api.nvim_buf_get_name(bufnr)
-      if bufname:match('^diffview://') then
+      local filetype = vim.bo[bufnr].filetype
+      if bufname:match('^diffview://') or filetype == 'minifiles' then
         return nil
       end
       -- Return current working directory for other files

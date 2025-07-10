@@ -4,9 +4,10 @@ function M.setup()
   vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
     callback = function(event)
-      -- Don't attach any LSP to diffview buffers
+      -- Don't attach any LSP to diffview or mini.files buffers
       local bufname = vim.api.nvim_buf_get_name(event.buf)
-      if bufname:match('^diffview://') then
+      local filetype = vim.bo[event.buf].filetype
+      if bufname:match('^diffview://') or filetype == 'minifiles' then
         return
       end
       require('lsp.keymaps').setup(event.data.client_id, event.buf)
