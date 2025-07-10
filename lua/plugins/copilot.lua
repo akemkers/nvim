@@ -5,6 +5,13 @@ return {
   config = function()
     local copilot_enabled = true
 
+    -- Disable copilot for specific filetypes
+    vim.g.copilot_filetypes = {
+      ['minifiles'] = false,
+      ['DiffviewFiles'] = false,
+      ['DiffviewFileHistory'] = false,
+    }
+
     function ToggleCopilot()
       if copilot_enabled == true then
         copilot_enabled = false
