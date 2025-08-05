@@ -6,6 +6,7 @@ return {
     config = function()
       require('catppuccin').setup {
         flavour = 'mocha',
+        transparent_background = true,
         integrations = {
           alpha = true,
           diffview = true,
@@ -20,15 +21,35 @@ return {
         highlight_overrides = {
           mocha = function(colors)
             local overrides = {
-              -- Tabline overrides
-              MiniTablineCurrent = { fg = colors.yellow, bg = colors.base, style = { 'bold' } },
-              MiniTablineFill = { bg = colors.mantle },
-              MiniTablineHidden = { fg = colors.overlay1, bg = colors.surface0 },
-              MiniTablineModifiedCurrent = { fg = colors.base, bg = colors.yellow, style = { 'bold' } },
-              MiniTablineModifiedHidden = { fg = colors.base, bg = colors.subtext0 },
-              MiniTablineModifiedVisible = { fg = colors.base, bg = colors.subtext0, style = { 'bold' } },
-              MiniTablineTabpagesection = { fg = colors.base, bg = colors.mauve, style = { 'bold' } },
-              MiniTablineVisible = { fg = colors.overlay1, bg = colors.surface0, style = { 'bold' } },
+              -- Tabline overrides (transparent backgrounds)
+              MiniTablineCurrent = { fg = colors.yellow, bg = "NONE", style = { 'bold' } },
+              MiniTablineFill = { bg = "NONE" },
+              MiniTablineHidden = { fg = colors.overlay1, bg = "NONE" },
+              MiniTablineModifiedCurrent = { fg = colors.yellow, bg = "NONE", style = { 'bold' } },
+              MiniTablineModifiedHidden = { fg = colors.subtext0, bg = "NONE" },
+              MiniTablineModifiedVisible = { fg = colors.subtext0, bg = "NONE", style = { 'bold' } },
+              MiniTablineTabpagesection = { fg = colors.mauve, bg = "NONE", style = { 'bold' } },
+              MiniTablineVisible = { fg = colors.overlay1, bg = "NONE", style = { 'bold' } },
+
+              -- Statusline overrides (transparent backgrounds)
+              MiniStatuslineModeNormal = { fg = colors.blue, bg = "NONE", style = { 'bold' } },
+              MiniStatuslineModeInsert = { fg = colors.green, bg = "NONE", style = { 'bold' } },
+              MiniStatuslineModeVisual = { fg = colors.mauve, bg = "NONE", style = { 'bold' } },
+              MiniStatuslineModeReplace = { fg = colors.red, bg = "NONE", style = { 'bold' } },
+              MiniStatuslineModeCommand = { fg = colors.yellow, bg = "NONE", style = { 'bold' } },
+              MiniStatuslineModeOther = { fg = colors.teal, bg = "NONE", style = { 'bold' } },
+              MiniStatuslineDevinfo = { fg = colors.overlay1, bg = "NONE" },
+              MiniStatuslineFilename = { fg = colors.text, bg = "NONE" },
+              MiniStatuslineFileinfo = { fg = colors.overlay1, bg = "NONE" },
+              MiniStatuslineDirectory = { fg = colors.text, bg = "NONE" },
+              MiniStatuslineInactive = { fg = colors.overlay0, bg = "NONE" },
+
+              --Base statusline and tabline backgrounds
+              StatusLine = { bg = "NONE" },
+              StatusLineNC = { bg = "NONE" },
+              TabLine = { bg = "NONE" },
+              TabLineFill = { bg = "NONE" },
+              TabLineSel = { bg = "NONE" },
 
               -- Typescript overrides
               ['@keyword.export'] = { fg = colors.mauve },
