@@ -91,9 +91,6 @@ vim.diagnostic.config {
   },
 }
 
--- Required for nvim-colorizer
-vim.opt.termguicolors = true
-
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
