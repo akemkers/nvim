@@ -90,7 +90,17 @@ return {
     {
       '<leader><leader>',
       function()
-        Snacks.picker.buffers()
+        Snacks.picker.buffers {
+          focus = 'list',
+          win = {
+            list = {
+              keys = {
+                ['d'] = 'bufdelete',
+                ['D'] = 'bufdelete',
+              },
+            },
+          },
+        }
       end,
       desc = 'Search Buffers',
     },

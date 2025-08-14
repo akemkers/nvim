@@ -59,6 +59,7 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
 
 -- diagnostics virtual text
 vim.diagnostic.config {
@@ -86,4 +87,9 @@ vim.diagnostic.config {
 
 -- Required for nvim-colorizer
 vim.opt.termguicolors = true
+
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+vim.opt.autoread = true
 -- vim: ts=2 sts=2 sw=2 et
