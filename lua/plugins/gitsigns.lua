@@ -47,9 +47,14 @@ return {
         map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
         map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
         map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
-        map('n', '<leader>hb', gitsigns.blame_line, { desc = 'git [b]lame line' })
-        map('n', '<leader>hd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
+        map('n', '<leader>hb', gitsigns.blame, { desc = 'git [b]lame line' })
+        -- map('n', '<leader>hd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
+        map('n', '<leader>hn', function()
+          gitsigns.nav_hunk 'next'
+        end, { desc = 'git [n]ext hunk' })
+        map('n', '<leader>hp', function()
+          gitsigns.nav_hunk 'prev'
+        end, { desc = 'git [p]prev hunk' })
       end,
     },
   },

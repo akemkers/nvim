@@ -56,6 +56,15 @@ return {
       desc = 'Search Files',
     },
     {
+      '<leader>sF',
+      function()
+        Snacks.picker.files {
+          hidden = true,
+        }
+      end,
+      desc = 'Smart Search Files',
+    },
+    {
       '<leader>:',
       function()
         Snacks.picker.command_history()
