@@ -8,7 +8,20 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
-    picker = {},
+    picker = {
+      win = {
+        input = {
+          keys = {
+            ['gi'] = { 'toggle_ignored', mode = { 'n' } },
+            ['gh'] = { 'toggle_hidden', mode = { 'n' } },
+            ['gp'] = { 'toggle_preview', mode = { 'n' } },
+            ['gm'] = { 'toggle_maximize', mode = { 'n' } },
+            ['g?'] = { 'toggle_help_input', mode = { 'n' } },
+            ['gq'] = { 'qflist', mode = { 'n' } },
+          },
+        },
+      },
+    },
     explorer = {},
     input = {},
     bigfile = {},

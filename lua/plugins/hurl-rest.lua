@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   'jellydn/hurl.nvim',
   dependencies = {
     'MunifTanjim/nui.nvim',
